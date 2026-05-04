@@ -1,5 +1,42 @@
 # Upgrade Guide
 
+## Upgrading from v2.0 to v2.1
+
+v2.1 is a minor release that drops support for Laravel 11. There are no public API changes, no schema changes, and no required code changes for applications running Laravel 12 or 13.
+
+### Requirements
+
+| Requirement | v2.0           | v2.1           |
+|-------------|----------------|----------------|
+| PHP         | ^8.3           | ^8.3           |
+| Laravel     | ^11, ^12, ^13  | ^12, ^13       |
+
+### Why was Laravel 11 dropped?
+
+Laravel 11 reached end-of-life on **March 12, 2026** and no longer receives bug or security fixes from the Laravel team. Continuing to support an unmaintained framework version is a security risk.
+
+### What if I'm still on Laravel 11?
+
+Stay on `^2.0` until you've upgraded your application:
+
+```bash
+composer require cjmellor/approval:"^2.0"
+```
+
+Then follow the [Laravel upgrade guide](https://laravel.com/docs/upgrade) to move to Laravel 12 or 13 before upgrading this package to `^2.1`.
+
+### Upgrade Process (Laravel 12 / 13)
+
+```bash
+composer require cjmellor/approval:"^2.1"
+```
+
+That's it — no migrations, no config republish, no code changes required.
+
+### Internal Notes
+
+- The `requestedBy` query scope on `Cjmellor\Approval\Models\Approval` has been migrated from the `scopeRequestedBy` method-name convention to Laravel 12's `#[Scope]` attribute. **This is an internal refactor** — calling `Approval::requestedBy($user)` continues to work exactly as before.
+
 ## Upgrading from v1 to v2
 
 This guide will help you safely upgrade from v1.x to v2.x of the Approval package.

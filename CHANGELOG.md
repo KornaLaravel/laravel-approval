@@ -2,6 +2,16 @@
 
 All notable changes to `approval` will be documented in this file.
 
+## v2.1.0 - Unreleased
+
+### Breaking Changes
+
+- **Dropped support for Laravel 11** — Laravel 11 reached end-of-life on March 12, 2026 and no longer receives security updates. The package now requires `illuminate/contracts: ^12.0|^13.0`. Users on Laravel 11 should remain on `^2.0` or upgrade their application.
+
+### Improvements
+
+- **`#[Scope]` attribute** — The `requestedBy` query scope on `Approval` has been migrated from the `scope*` method-name convention to Laravel 12's `#[Illuminate\Database\Eloquent\Attributes\Scope]` attribute. Calling `Approval::requestedBy($user)` continues to work identically.
+
 ## v2.0.0 - 2026-03-20
 
 ### Breaking Changes
