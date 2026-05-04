@@ -116,7 +116,7 @@ test(description: 'getRequestorAttribute returns the user that requested approva
         ->name->toBe($user->name);
 });
 
-test(description: 'scopeRequestedBy correctly filters approvals by requestor', closure: function (): void {
+test(description: 'requestedBy scope correctly filters approvals by requestor', closure: function (): void {
     $user1 = FakeUser::create([
         'name' => 'User One',
         'email' => 'user1@example.com',

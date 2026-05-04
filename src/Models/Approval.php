@@ -12,6 +12,7 @@ use Cjmellor\Approval\Scopes\ApprovalStateScope;
 use Closure;
 use DateTimeInterface;
 use Exception;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
@@ -98,7 +99,8 @@ class Approval extends Model
         return $this->morphTo();
     }
 
-    public function scopeRequestedBy(Builder $query, Model $requestor): Builder
+    #[Scope]
+    protected function requestedBy(Builder $query, Model $requestor): Builder
     {
         return $query->where('creator_type', $requestor::class)
             ->where('creator_id', $requestor->getKey());
