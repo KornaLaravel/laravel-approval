@@ -6,10 +6,12 @@ v2.1 is a minor release that drops support for Laravel 11. There are no public A
 
 ### Requirements
 
-| Requirement | v2.0           | v2.1           |
-|-------------|----------------|----------------|
-| PHP         | ^8.3           | ^8.3           |
-| Laravel     | ^11, ^12, ^13  | ^12, ^13       |
+| Requirement | v2.0           | v2.1            |
+|-------------|----------------|-----------------|
+| PHP         | ^8.3           | ^8.3            |
+| Laravel     | ^11, ^12, ^13  | ^12.4, ^13      |
+
+> The minimum Laravel 12 version is **12.4** because v2.1 uses the `#[Scope]` attribute, which was introduced in Laravel 12.4.
 
 ### Why was Laravel 11 dropped?
 

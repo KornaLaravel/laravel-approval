@@ -11,10 +11,12 @@ Approval is a Laravel package that provides a simple way to approve new Model da
 ## Requirements
 
 - PHP 8.3 or higher
-- Laravel 12 or 13
+- Laravel 12.4 or higher (or Laravel 13)
 
 > [!IMPORTANT]
 > As of v2.1, support for Laravel 11 has been dropped. Laravel 11 reached end-of-life on March 12, 2026 and no longer receives security updates. If you're still on Laravel 11, stay on `^2.0` or upgrade your Laravel application before installing this version.
+>
+> The minimum Laravel 12 version is **12.4**, because the package now uses the `#[Scope]` attribute introduced in that release.
 
 ## Installation
 
